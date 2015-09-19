@@ -24,7 +24,7 @@ public class Cell {
             return true;
         else if(verticalNeighbour(thatCell))
             return true;
-        else if(this.row - 1 == thatCell.row && this.column + 1 == thatCell.column)
+        else if(diagonalTopRight(thatCell))
             return true;
         else
             return false;
@@ -36,5 +36,9 @@ public class Cell {
 
     private boolean verticalNeighbour(Cell thatCell) {
         return this.column == thatCell.column && (this.row == thatCell.row - 1 || this.row == thatCell.row + 1);
+    }
+
+    private boolean diagonalTopRight(Cell thatCell) {
+        return this.row - 1 == thatCell.row && this.column + 1 == thatCell.column;
     }
 }
