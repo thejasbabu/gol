@@ -30,6 +30,8 @@ public class Cell {
             return true;
         else if(thatCell.diagonalRight(this))
             return true;
+        else if(thatCell.diagonalLeft(this))
+            return true;
         else
             return false;
     }

@@ -74,4 +74,12 @@ public class CellTest {
 
         assertEquals(true, cellOne.neighbourOf(cellTwo));
     }
+
+    @Test
+    public void shouldReturnTrueIfACellIsNeighbourOfAnotherCellDiagonallyBottomLeft() {
+        Cell cellOne = new Cell(1, 1, true);
+        Cell cellTwo = new Cell(2, 2, true);
+
+        assertEquals(true, cellOne.neighbourOf(cellTwo));
+    }
 }
