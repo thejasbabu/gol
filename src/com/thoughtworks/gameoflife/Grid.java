@@ -20,16 +20,11 @@ public class Grid {
         return numberOfNeighbour;
     }
 
-    public int numberOfDeadNeighbour(Cell cell) {
-        int numberOfNeighbour = 0;
-        for(Cell thatCell : cells) {
-            if(thatCell.stateOfCell().equals("Dead") && thatCell.neighbourOf(cell))
-                numberOfNeighbour++;
-        }
-        return numberOfNeighbour;
-    }
-
     public boolean aliveCheckForDeadCell(Cell cell) {
         return numberOfAliveNeighbour(cell) == 3;
+    }
+
+    public boolean deadCheckForAliveCell(Cell cell) {
+        return numberOfAliveNeighbour(cell) > 3 || numberOfAliveNeighbour(cell) < 2;
     }
 }
