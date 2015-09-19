@@ -90,4 +90,38 @@ public class CellTest {
 
         assertEquals(false, cellOne.neighbourOf(cellTwo));
     }
+
+    @Test
+    public void shouldBeEqualToAnotherCellWithSameValues() {
+        Cell cellOne = new Cell(1, 1, true);
+        Cell cellTwo = new Cell(1, 1, true);
+
+        assertEquals(cellOne, cellTwo);
+    }
+
+    @Test
+    public void shouldNotBeEqualToAnotherCellWithDifferentValues() {
+        Cell cellOne = new Cell(1, 1, true);
+        Cell cellTwo = new Cell(1, 1, false);
+
+        assertNotEquals(cellOne, cellTwo);
+    }
+
+    @Test
+    public void shouldHaveSameHashCode() {
+        Cell cellOne = new Cell(1, 1, true);
+        Cell cellTwo = new Cell(1, 1, true);
+
+        assertEquals(cellOne.hashCode(), cellTwo.hashCode());
+    }
+
+    @Test
+    public void shouldChangeTheStateOfCell() {
+        Cell cellOne = new Cell(1, 1, true);
+        Cell cellTwo = new Cell(1, 1, false);
+
+        cellOne.changeState();
+
+        assertEquals(cellOne, cellTwo);
+    }
 }

@@ -12,6 +12,29 @@ public class Cell {
         this.state = state;
     }
 
+    public void changeState() {
+        this.state = !this.state;
+    }
+
+    @Override
+    public boolean equals(Object thatCell) {
+        if (this == thatCell) return true;
+        if (thatCell == null || getClass() != thatCell.getClass()) return false;
+        Cell cell = (Cell) thatCell;
+        if (row != cell.row) return false;
+        if (column != cell.column) return false;
+        return state == cell.state;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = row;
+        result = 31 * result + column;
+        result = 31 * result + (state ? 1 : 0);
+        return result;
+    }
+
     public String stateOfCell() {
         if(state)
             return "Alive";
