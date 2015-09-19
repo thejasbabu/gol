@@ -20,11 +20,19 @@ public class Cell {
     }
 
     public boolean neighbourOf(Cell thatCell) {
-        if(this.row == thatCell.row && (this.column == thatCell.column - 1 || this.column == thatCell.column + 1))
+        if(horizontalNeighbour(thatCell))
             return true;
-        else if(this.column == thatCell.column && (this.row == thatCell.row - 1 || this.row == thatCell.row + 1))
+        else if(verticalNeighbour(thatCell))
             return true;
         else
             return false;
+    }
+
+    private boolean horizontalNeighbour(Cell thatCell) {
+        return this.row == thatCell.row && (this.column == thatCell.column - 1 || this.column == thatCell.column + 1);
+    }
+
+    private boolean verticalNeighbour(Cell thatCell) {
+        return this.column == thatCell.column && (this.row == thatCell.row - 1 || this.row == thatCell.row + 1);
     }
 }
