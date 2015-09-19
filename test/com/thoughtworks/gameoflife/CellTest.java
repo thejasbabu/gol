@@ -52,7 +52,7 @@ public class CellTest {
     }
 
     @Test
-    public void shouldReturnTrueIfACellIsNeighbourOfAnotherCellDiagonallyRight() {
+    public void shouldReturnTrueIfACellIsNeighbourOfAnotherCellDiagonallyTopRight() {
         Cell cellOne = new Cell(2, 2, true);
         Cell cellTwo = new Cell(1, 3, true);
 
@@ -60,9 +60,17 @@ public class CellTest {
     }
 
     @Test
-    public void shouldReturnTrueIfACellIsNeightbourOfAnotherCellDiagonallyTopLeft() {
+    public void shouldReturnTrueIfACellIsNeighbourOfAnotherCellDiagonallyTopLeft() {
         Cell cellOne = new Cell(2, 2, true);
         Cell cellTwo = new Cell(1, 1, true);
+
+        assertEquals(true, cellOne.neighbourOf(cellTwo));
+    }
+
+    @Test
+    public void shouldReturnTrueIfACellIsNeighbourOfAnotherCellDiagnoallyBottomRight() {
+        Cell cellOne = new Cell(1, 3, true);
+        Cell cellTwo = new Cell(2, 2, true);
 
         assertEquals(true, cellOne.neighbourOf(cellTwo));
     }
