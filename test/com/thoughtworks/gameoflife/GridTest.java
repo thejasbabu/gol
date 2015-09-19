@@ -81,4 +81,20 @@ public class GridTest {
 
         assertNotEquals(gridOne, gridTwo);
     }
+
+    @Test
+    public void shouldHaveTheSameHashIfTwoGridsAreEqual() {
+        ArrayList<Cell> cells = new ArrayList<Cell>();
+        cells.add(new Cell(1, 1, true));
+        cells.add(new Cell(1, 2, true));
+        cells.add(new Cell(2, 1, true));
+        cells.add(new Cell(2, 2, true));
+        cells.add(new Cell(3, 1, true));
+        cells.add(new Cell(3, 2, true));
+
+        Grid gridOne = new Grid(cells);
+        Grid gridTwo = new Grid(cells);
+
+        assertEquals(gridOne.hashCode(), gridTwo.hashCode());
+    }
 }
