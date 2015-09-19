@@ -2,13 +2,13 @@
 package com.thoughtworks.gameoflife;
 
 public class Cell {
-    private int x;
-    private int y;
+    private int row;
+    private int column;
     private boolean state;
 
-    public Cell(int x, int y, boolean state) {
-        this.x = x;
-        this.y = y;
+    public Cell(int row, int column, boolean state) {
+        this.row = row;
+        this.column = column;
         this.state = state;
     }
 
@@ -17,5 +17,12 @@ public class Cell {
             return "Alive";
         else
             return "Dead";
+    }
+
+    public boolean neighbourOf(Cell thatCell) {
+        if(this.row == thatCell.row && (this.column == thatCell.column - 1 || this.column == thatCell.column + 1))
+            return true;
+        else
+            return false;
     }
 }

@@ -18,4 +18,12 @@ public class CellTest {
 
         assertEquals("Dead", cell.stateOfCell());
     }
+
+    @Test
+    public void shouldReturnTrueIfACellIsANeighbourOfAnotherCell() {
+        Cell cellOne = new Cell(1, 2, true);
+        Cell cellTwo = new Cell(1, 3, true);
+
+        assertEquals(true, cellOne.neighbourOf(cellTwo));
+    }
 }
