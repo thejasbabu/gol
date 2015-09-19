@@ -58,4 +58,12 @@ public class CellTest {
 
         assertEquals(true, cellOne.neighbourOf(cellTwo));
     }
+
+    @Test
+    public void shouldReturnTrueIfACellIsNeightbourOfAnotherCellDiagonallyTopLeft() {
+        Cell cellOne = new Cell(2, 2, true);
+        Cell cellTwo = new Cell(1, 1, true);
+
+        assertEquals(true, cellOne.neighbourOf(cellTwo));
+    }
 }
