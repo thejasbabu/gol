@@ -24,6 +24,8 @@ public class Cell {
             return true;
         else if(verticalNeighbour(thatCell))
             return true;
+        else if(this.row - 1 == thatCell.row && this.column + 1 == thatCell.column)
+            return true;
         else
             return false;
     }

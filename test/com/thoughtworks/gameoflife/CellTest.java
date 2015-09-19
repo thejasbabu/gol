@@ -37,8 +37,8 @@ public class CellTest {
 
     @Test
     public void shouldReturnTrueIfACellIsANeighbourOfAnotherCellVertically() {
-        Cell cellOne = new Cell(1, 2, true);
-        Cell cellTwo = new Cell(2, 2, true);
+        Cell cellOne = new Cell(2, 2, true);
+        Cell cellTwo = new Cell(1, 2, true);
 
         assertEquals(true, cellOne.neighbourOf(cellTwo));
     }
@@ -49,5 +49,13 @@ public class CellTest {
         Cell cellTwo = new Cell(2, 3, true);
 
         assertEquals(false, cellOne.neighbourOf(cellTwo));
+    }
+
+    @Test
+    public void shouldReturnTrueIfACellIsNeighbourOfAnotherCellDiagonallyRight() {
+        Cell cellOne = new Cell(2, 2, true);
+        Cell cellTwo = new Cell(1, 3, true);
+
+        assertEquals(true, cellOne.neighbourOf(cellTwo));
     }
 }
