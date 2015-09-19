@@ -21,7 +21,7 @@ public class GridTest {
         Cell cell = new Cell(1, 1, true);
         assertEquals(2, grid.numberOfAliveNeighbour(cell));
     }
-    
+
     @Test
     public void shouldReturnTrueWhenDeadCellIsSurroundedByExactlyThreeAliveCells() {
         ArrayList<Cell> cells = new ArrayList<Cell>();
@@ -48,5 +48,37 @@ public class GridTest {
         Grid grid = new Grid(cells);
 
         assertEquals(true, grid.deadCheckForAliveCell(new Cell(2, 1, true)));
+    }
+
+    @Test
+    public void shouldReturnTrueIfTwoGridsHaveSameCells() {
+        ArrayList<Cell> cells = new ArrayList<Cell>();
+        cells.add(new Cell(1, 1, true));
+        cells.add(new Cell(1, 2, true));
+        cells.add(new Cell(2, 1, true));
+        cells.add(new Cell(2, 2, true));
+        cells.add(new Cell(3, 1, true));
+        cells.add(new Cell(3, 2, true));
+
+        Grid gridOne = new Grid(cells);
+        Grid gridTwo = new Grid(cells);
+
+        assertEquals(gridOne, gridTwo);
+    }
+
+    @Test
+    public void shouldReturnFalseIfTwoGridsHaveDifferentCells() {
+        ArrayList<Cell> cells = new ArrayList<Cell>();
+        cells.add(new Cell(1, 1, true));
+        cells.add(new Cell(1, 2, true));
+        cells.add(new Cell(2, 1, true));
+        cells.add(new Cell(2, 2, true));
+        ArrayList<Cell> cellsTwo = new ArrayList<Cell>();
+        cellsTwo.add(new Cell(2, 1, true));
+        cellsTwo.add(new Cell(2, 2, true));
+        Grid gridOne = new Grid(cells);
+        Grid gridTwo = new Grid(cellsTwo);
+
+        assertNotEquals(gridOne, gridTwo);
     }
 }
