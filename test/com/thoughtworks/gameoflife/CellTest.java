@@ -26,4 +26,12 @@ public class CellTest {
 
         assertEquals(true, cellOne.neighbourOf(cellTwo));
     }
+
+    @Test
+    public void shouldReturnFalseIfACellIsNotANeighbourOfAnotherCell() {
+        Cell cellOne = new Cell(1, 2, true);
+        Cell cellTwo = new Cell(1, 4, true);
+
+        assertEquals(false, cellOne.neighbourOf(cellTwo));
+    }
 }
