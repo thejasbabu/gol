@@ -22,6 +22,8 @@ public class Cell {
     public boolean neighbourOf(Cell thatCell) {
         if(this.row == thatCell.row && (this.column == thatCell.column - 1 || this.column == thatCell.column + 1))
             return true;
+        else if(this.column == thatCell.column && (this.row == thatCell.row - 1 || this.row == thatCell.row + 1))
+            return true;
         else
             return false;
     }

@@ -34,4 +34,12 @@ public class CellTest {
 
         assertEquals(false, cellOne.neighbourOf(cellTwo));
     }
+
+    @Test
+    public void shouldReturnTrueIfACellIsANeighbourOfAnotherCellVertically() {
+        Cell cellOne = new Cell(1, 2, true);
+        Cell cellTwo = new Cell(2, 2, true);
+
+        assertEquals(true, cellOne.neighbourOf(cellTwo));
+    }
 }
