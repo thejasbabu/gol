@@ -97,4 +97,24 @@ public class GridTest {
 
         assertEquals(gridOne.hashCode(), gridTwo.hashCode());
     }
+
+    @Test
+    public void shouldChangeTheAliveCellsToDeadAndDeadCellsToAliveDependingOnTheThreeCondition() {
+        ArrayList<Cell> cells = new ArrayList<Cell>();
+        cells.add(new Cell(1, 1, false));
+        cells.add(new Cell(1, 2, true));
+        cells.add(new Cell(2, 1, true));
+        cells.add(new Cell(2, 2, true));
+        Grid gridOne = new Grid(cells);
+        ArrayList<Cell> cellsTwo = new ArrayList<Cell>();
+        cellsTwo.add(new Cell(1, 1, true));
+        cellsTwo.add(new Cell(1, 2, true));
+        cellsTwo.add(new Cell(2, 1, true));
+        cellsTwo.add(new Cell(2, 2, true));
+        Grid gridTwo = new Grid(cellsTwo);
+
+        gridOne.deadOrAlive();
+
+        assertEquals(true, gridOne.equals(gridTwo));
+    }
 }

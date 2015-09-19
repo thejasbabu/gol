@@ -35,6 +35,21 @@ public class Grid {
         return cells != null ? cells.hashCode() : 0;
     }
 
+    public void deadOrAlive() {
+        for(Cell cell : cells) {
+            if(cell.stateOfCell().equals("Alive"))
+            {
+                if(deadCheckForAliveCell(cell))
+                    cell.stateOfCell();
+            }
+            else
+            {
+                if(aliveCheckForDeadCell(cell))
+                    cell.stateOfCell();
+            }
+        }
+    }
+
     public boolean aliveCheckForDeadCell(Cell cell) {
         return numberOfAliveNeighbour(cell) == 3;
     }
