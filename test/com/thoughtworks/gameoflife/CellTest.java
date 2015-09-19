@@ -82,4 +82,12 @@ public class CellTest {
 
         assertEquals(true, cellOne.neighbourOf(cellTwo));
     }
+
+    @Test
+    public void shouldReturnFalseWhenCellIsNotANieghbourVerticallyHorizonatllyAndDiagonally() {
+        Cell cellOne = new Cell(1, 1, true);
+        Cell cellTwo = new Cell(1, 4, true);
+
+        assertEquals(false, cellOne.neighbourOf(cellTwo));
+    }
 }
