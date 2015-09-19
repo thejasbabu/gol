@@ -20,17 +20,7 @@ public class Cell {
     }
 
     public boolean neighbourOf(Cell thatCell) {
-        if(horizontalNeighbour(thatCell))
-            return true;
-        else if(verticalNeighbour(thatCell))
-            return true;
-        else if(diagonalRight(thatCell))
-            return true;
-        else if(diagonalLeft(thatCell))
-            return true;
-        else if(thatCell.diagonalRight(this))
-            return true;
-        else if(thatCell.diagonalLeft(this))
+        if(horizontalNeighbour(thatCell) || verticalNeighbour(thatCell) || diagonalRight(thatCell) || diagonalLeft(thatCell) || thatCell.diagonalRight(this) || thatCell.diagonalLeft(this))
             return true;
         else
             return false;
