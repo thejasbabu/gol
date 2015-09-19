@@ -35,4 +35,17 @@ public class GridTest {
         Cell cell = new Cell(1, 1, true);
         assertEquals(2, grid.numberOfDeadNeighbour(cell));
     }
+
+    @Test
+    public void shouldReturnTrueWhenDeadCellIsSurroundedByExactlyThreeAliveCells() {
+        ArrayList<Cell> cells = new ArrayList<Cell>();
+        cells.add(new Cell(1, 1, false));
+        cells.add(new Cell(1, 2, true));
+        cells.add(new Cell(2, 1, true));
+        cells.add(new Cell(2, 2, true));
+
+        Grid grid = new Grid(cells);
+
+        assertEquals(true, grid.aliveCheckForDeadCell(new Cell(1, 1, false)));
+    }
 }

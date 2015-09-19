@@ -1,3 +1,4 @@
+// Grid class represents the 2-D universe and contains square cell.
 package com.thoughtworks.gameoflife;
 
 import java.util.ArrayList;
@@ -19,7 +20,6 @@ public class Grid {
         return numberOfNeighbour;
     }
 
-
     public int numberOfDeadNeighbour(Cell cell) {
         int numberOfNeighbour = 0;
         for(Cell thatCell : cells) {
@@ -27,5 +27,9 @@ public class Grid {
                 numberOfNeighbour++;
         }
         return numberOfNeighbour;
+    }
+
+    public boolean aliveCheckForDeadCell(Cell cell) {
+        return numberOfAliveNeighbour(cell) == 3;
     }
 }
