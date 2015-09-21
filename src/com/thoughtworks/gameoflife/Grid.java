@@ -21,14 +21,14 @@ public class Grid {
         return numberOfNeighbour;
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        Grid grid = (Grid) o;
-//        return !(cells != null ? !cells.equals(grid.cells) : grid.cells != null);
-//
-//    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Grid grid = (Grid) o;
+        return !(cells != null ? !cells.equals(grid.cells) : grid.cells != null);
+
+    }
 
     @Override
     public int hashCode() {
