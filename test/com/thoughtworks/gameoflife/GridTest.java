@@ -1,4 +1,3 @@
-// Test class for Grid class
 package com.thoughtworks.gameoflife;
 
 import org.junit.Test;
