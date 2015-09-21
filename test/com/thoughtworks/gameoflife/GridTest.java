@@ -1,3 +1,4 @@
+// Test class
 package com.thoughtworks.gameoflife;
 
 import org.junit.Test;
